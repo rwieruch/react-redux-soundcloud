@@ -12,11 +12,11 @@ More folders will follow. They will pair with a blogpost and build up on top of 
 
 ### Base
 
-init/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/
+base-init/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/
 
 ### Extensions
 
-eslint/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint/
+extension-eslint/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint/
 
 ## Get Started
 
