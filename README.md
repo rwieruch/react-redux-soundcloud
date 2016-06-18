@@ -6,7 +6,7 @@ Moreover you can find a real world example of my own SoundCloud client as source
 
 This repository should give you an entry point for all my follow up blog posts. Below you find a list of folders. The init folder is the outcome of the tutorial http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/
 
-Other folders will follow. They will pair with a blogpost and build up on top of my React + Redux SoundCloud client tutorial.
+More folders will follow. They will pair with a blogpost and build up on top of my React + Redux SoundCloud client tutorial.
 
 ## Folders
 
@@ -24,3 +24,11 @@ eslint/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint
 2. navigate to desired folder
 3. npm install
 4. npm start
+
+## Contribute
+
+1. Clone Repository
+2. Create your own folder next to init
+3. Copy the content on init into your own folder
+4. navigate to your own folder and npm install && npm start
+5. Build your own project on top of it
