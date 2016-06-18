@@ -21,7 +21,7 @@ eslint/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint
 ## Get Started
 
 1. Clone Repository
-2. navigate to desired folder
+2. Navigate to desired folder
 3. npm install
 4. npm start
 
@@ -30,5 +30,5 @@ eslint/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint
 1. Clone Repository
 2. Create your own folder next to init
 3. Copy the content on init into your own folder
-4. navigate to your own folder and npm install && npm start
+4. Navigate to your own folder and npm install && npm start
 5. Build your own project on top of it
