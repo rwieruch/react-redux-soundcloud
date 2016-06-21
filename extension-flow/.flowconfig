@@ -1,0 +1,7 @@
+[ignore]
+
+.*node_modules/fbjs.*
+
+[libs]
+
+decls

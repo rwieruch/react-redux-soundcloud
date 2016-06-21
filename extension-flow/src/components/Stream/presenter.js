@@ -1,8 +1,18 @@
+// @flow
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from '../../constants/auth';
 
 class Stream extends Component {
+
+  props: {
+    user: User,
+    tracks: Array<Track>,
+    activeTrack: ?Track,
+    onAuth: () => void,
+    onPlay: (someTrack: Track) => void,
+  };
 
   componentDidUpdate() {
     const audioElement = ReactDOM.findDOMNode(this.refs.audio);
