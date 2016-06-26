@@ -12,7 +12,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 
 ### Base
 
-base-init/ - [Tutorial: The SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/)
+- base-init/ - [Tutorial: The SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/)
 
 ### Extensions
 
