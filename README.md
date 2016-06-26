@@ -17,7 +17,8 @@ base-init/ - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/
 ### Extensions
 
 - extension-eslint/ - ESLint in React + Babel + Webpack - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint/
-- extension-flow/ - Type Safety with Flow in React + Redux - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow/
+- extension-flow/ - Type Checking with Flow in React + Redux - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow/
+- extension-ducks/ - Restructure your Redux App with Ducks - http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks/
 - more upcoming...
 
 ## Get Started
