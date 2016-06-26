@@ -27,12 +27,8 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 2. cd base-init
 3. npm install
 4. npm start
-5. read and apply one of the extension tutorials
+5. read and apply one of the extension tutorials OR start your own project on top of it
 
 ## Contribute
 
-1. clone repository
-2. create your own folder next to init
-3. copy the content on init into your own folder
-4. navigate to your own folder and npm install && npm start
-5. build your own project on top of it like I did with the extension projects
+Feel free to contribute or leave a comment for feedback! :)
