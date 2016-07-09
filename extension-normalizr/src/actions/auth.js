@@ -33,8 +33,7 @@ function fetchStream(me, session) {
       .then((response) => response.json())
       .then((data) => {
         const normalized = normalize(map(data.collection, 'origin'), arrayOf(trackSchema));
-        console.log(normalized);
-        dispatch(setTracks(data.collection));
+        dispatch(setTracks(normalized.entities.tracks, normalized.result));
       });
   };
 }

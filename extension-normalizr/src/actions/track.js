@@ -1,22 +1,23 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function setTracks(tracks) {
+export function setTracks(trackEntities, trackIds) {
   return {
     type: actionTypes.TRACKS_SET,
-    tracks
+    trackEntities,
+    trackIds
   };
 };
 
-export function playTrack(track) {
+export function playTrack(trackId) {
   return {
     type: actionTypes.TRACK_PLAY,
-    track
+    trackId
   };
 }
 
-export function likeTrack(track) {
+export function likeTrack(trackId) {
   return {
     type: actionTypes.TRACK_LIKE,
-    track
+    trackId
   };
 }

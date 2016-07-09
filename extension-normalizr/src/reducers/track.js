@@ -2,8 +2,9 @@ import * as actionTypes from '../constants/actionTypes';
 import { findIndex } from 'lodash';
 
 const initialState = {
-    tracks: [],
-    activeTrack: null
+    trackEntities: {},
+    trackIds: [],
+    activeTrackId: null
 };
 
 export default function(state = initialState, action) {
@@ -19,26 +20,17 @@ export default function(state = initialState, action) {
 }
 
 function setTracks(state, action) {
-  const { tracks } = action;
-  return { ...state, tracks };
+  const { trackEntities, trackIds } = action;
+  return { ...state, trackEntities, trackIds };
 }
 
 function setPlay(state, action) {
-  const { track } = action;
-  return { ...state, activeTrack: track };
+  const { trackId } = action;
+  return { ...state, activeTrackId: trackId };
 }
 
 function setLike(state, action) {
-  const { track } = action;
-
-  const index = findIndex(state.tracks, (t) => t.origin.id === track.origin.id);
-  const newTrack = { ...track, origin: { ...track.origin, user_favorite: !state.tracks[index].origin.user_favorite } };
-
-  const tracks = [
-    ...state.tracks.slice(0, index),
-    newTrack,
-    ...state.tracks.slice(index + 1)
-  ];
-
-  return { ...state, tracks };
+  const { trackId } = action;
+  const newTrack = { ...state.trackEntities[trackId], user_favorite: !state.trackEntities[trackId].user_favorite };
+  return { ...state, trackEntities: { ...state.trackEntities, [trackId]: newTrack } };
 }
