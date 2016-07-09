@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from '../../constants/auth';
 
+function LikeButton({ track }) {
+  return (
+    <span>
+      {
+        track.origin.user_favorite ?
+          <button type="button">Unlike</button> :
+          <button type="button">Like</button>
+      }
+    </span>
+  );
+}
+
 class Stream extends Component {
 
   componentDidUpdate() {
@@ -22,39 +34,43 @@ class Stream extends Component {
     const { user, tracks = [], activeTrack, onAuth, onPlay } = this.props;
 
     return (
-    <div>
       <div>
+        <div>
+          {
+            user ?
+              <div>{user.username}</div> :
+              <button onClick={onAuth} type="button">Login</button>
+          }
+        </div>
+        <br/>
+        <div>
         {
-          user ?
-            <div>{user.username}</div> :
-            <button onClick={onAuth} type="button">Login</button>
+          tracks.map((track, key) => {
+              return (
+                <div className="track" key={key}>
+                  {track.origin.title}
+                  <button type="button" onClick={() => onPlay(track)}>Play</button>
+                  <LikeButton track={track} />
+                </div>
+              );
+          })
+        }
+        </div>
+        <br/>
+        {
+          activeTrack ?
+            <div>
+              <div>
+                Playing: {activeTrack.origin.title}
+                <LikeButton track={activeTrack} />
+              </div>
+              <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio>
+            </div>:
+            null
         }
       </div>
-      <br/>
-      <div>
-      {
-        tracks.map((track, key) => {
-            return (
-              <div className="track" key={key}>
-                {track.origin.title}
-                <button type="button" onClick={() => onPlay(track)}>Play</button>
-              </div>
-            );
-        })
-      }
-      </div>
-      <br/>
-      {
-        activeTrack ?
-          <div>
-            <div>Playing: {activeTrack.origin.title}</div>
-            <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio>
-          </div>:
-          null
-      }
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default Stream;
