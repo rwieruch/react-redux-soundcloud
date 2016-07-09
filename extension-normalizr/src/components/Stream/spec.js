@@ -4,7 +4,8 @@ import { shallow } from 'enzyme';
 describe('Stream', () => {
 
   const props = {
-    tracks: [{ origin: { title: 'x' } }, { origin: { title: 'y' } }],
+    trackIds: ['x', 'y'],
+    trackEntities: { x: { title: 'x' }, y: { title: 'y' } }
   };
 
   it('shows two elements', () => {
