@@ -19,6 +19,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 - extension-eslint/ - [Tutorial: ESLint in React + Babel + Webpack](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint)
 - extension-flow/ - [Tutorial: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
 - extension-ducks/ - [Tutorial: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
+- extension-normalizr/ - [Tutorial: Normalizr in Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
 - more upcoming...
 
 ## Get Started
