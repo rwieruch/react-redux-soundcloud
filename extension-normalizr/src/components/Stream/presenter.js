@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from '../../constants/auth';
 
-function LikeButton({ track }) {
+function LikeButton({ track, onLike }) {
   return (
     <span>
       {
         track.origin.user_favorite ?
-          <button type="button">Unlike</button> :
-          <button type="button">Like</button>
+          <button type="button" onClick={() => onLike(track)}>Unlike</button> :
+          <button type="button" onClick={() => onLike(track)}>Like</button>
       }
     </span>
   );
@@ -31,7 +31,7 @@ class Stream extends Component {
   }
 
   render() {
-    const { user, tracks = [], activeTrack, onAuth, onPlay } = this.props;
+    const { user, tracks = [], activeTrack, onAuth, onPlay, onLike } = this.props;
 
     return (
       <div>
@@ -50,7 +50,7 @@ class Stream extends Component {
                 <div className="track" key={key}>
                   {track.origin.title}
                   <button type="button" onClick={() => onPlay(track)}>Play</button>
-                  <LikeButton track={track} />
+                  <LikeButton track={track} onLike={onLike} />
                 </div>
               );
           })
@@ -62,7 +62,7 @@ class Stream extends Component {
             <div>
               <div>
                 Playing: {activeTrack.origin.title}
-                <LikeButton track={activeTrack} />
+                <LikeButton track={activeTrack} onLike={onLike} />
               </div>
               <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio>
             </div>:

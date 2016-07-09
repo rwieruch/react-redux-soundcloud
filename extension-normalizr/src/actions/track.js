@@ -13,3 +13,10 @@ export function playTrack(track) {
     track
   };
 }
+
+export function likeTrack(track) {
+  return {
+    type: actionTypes.TRACK_LIKE,
+    track
+  };
+}
