@@ -17,15 +17,11 @@
   line-height: 20px;
   color: #61B25A;
   border-radius: 5px;
-  background-clip: padding-box;
   padding: 5px 10px;
   cursor: pointer;
 
   &:hover {
-    -webkit-transition: 0.2s ease;
-    -moz-transition: 0.2s ease;
-    -o-transition: 0.2s ease;
-    transition: 0.2s ease;
+    transition: 1s ease;
     background-color: #61B25A;
     color: #FFFFFF;
   }
