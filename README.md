@@ -20,7 +20,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 - extension-flow/ - [Tutorial: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
 - extension-ducks/ - [Tutorial: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
 - extension-normalizr/ - [Tutorial: Normalizr in Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
-- extension-normalizr/ - [Tutorial: Up and Styled with CSS Modules in React](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
+- extension-css-modules/ - [Tutorial: Up and Styled with CSS Modules in React](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
 - more upcoming...
 
 ## Get Started
