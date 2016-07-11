@@ -36,6 +36,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "css-loader": "^0.23.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
@@ -45,6 +46,7 @@
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
     "soundcloud": "^3.1.2",
+    "style-loader": "^0.13.1",
     "whatwg-fetch": "^1.0.0"
   }
 }
