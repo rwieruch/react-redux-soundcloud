@@ -3,12 +3,12 @@
 .track {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  margin: 10px;
+  padding: $padding / 2;
+  margin: $padding / 2;
   border: 1px solid #3A3A3A;
 
   button {
-    margin: 10px 0;
+    margin: ($padding / 2) 0;
   }
 }
 
@@ -16,10 +16,10 @@
   display: inline-block;
   background: transparent;
   border: 1px solid $mainColor;
-  line-height: 20px;
+  line-height: $padding;
   color: $mainColor;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: ($padding / 4) ($padding / 2);
   cursor: pointer;
 
   &:hover {
@@ -31,4 +31,8 @@
   &:focus {
     outline: none;
   }
+}
+
+.large {
+  height: 60px;
 }
