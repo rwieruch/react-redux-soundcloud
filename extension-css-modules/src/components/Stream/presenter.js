@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from '../../constants/auth';
+import styles from './style.css'
 
 class Stream extends Component {
 
@@ -37,7 +38,7 @@ class Stream extends Component {
             return (
               <div className="track" key={key}>
                 {track.origin.title}
-                <button type="button" onClick={() => onPlay(track)}>Play</button>
+                <button className="button" type="button" onClick={() => onPlay(track)}>Play</button>
               </div>
             );
         })
