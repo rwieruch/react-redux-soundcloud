@@ -1,3 +1,5 @@
+@import '../../styles/custom';
+
 .track {
   display: flex;
   flex-direction: column;
@@ -13,16 +15,16 @@
 .button {
   display: inline-block;
   background: transparent;
-  border: 1px solid #61B25A;
+  border: 1px solid $mainColor;
   line-height: 20px;
-  color: #61B25A;
+  color: $mainColor;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
 
   &:hover {
     transition: 1s ease;
-    background-color: #61B25A;
+    background-color: $mainColor;
     color: #FFFFFF;
   }
 
