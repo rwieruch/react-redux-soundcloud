@@ -8,6 +8,7 @@ import configureStore from './stores/configureStore';
 import App from './components/App';
 import Callback from './components/Callback';
 import Stream from './components/Stream';
+import styles from './styles/style.scss'
 
 const store = configureStore();
 
