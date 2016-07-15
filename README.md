@@ -16,11 +16,11 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 
 ### Extensions
 
-- extension-eslint/ - [Tutorial: ESLint in React + Babel + Webpack](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint)
-- extension-flow/ - [Tutorial: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
-- extension-ducks/ - [Tutorial: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
-- extension-normalizr/ - [Tutorial: Improve State Management with Normalizr in Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
-- extension-css-modules/ - [Tutorial: Up and Styled with CSS Modules in React](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
+- extension-eslint/ - [React ESLint: Code Style like Airbnb in React](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint)
+- extension-flow/ - [Flow: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
+- extension-ducks/ - [Redux Ducks: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
+- extension-normalizr/ - [Redux Normalizr: Improve your State Management](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
+- extension-css-modules/ - [React CSS Modules: Style your React App](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
 - more upcoming...
 
 ## Get Started
