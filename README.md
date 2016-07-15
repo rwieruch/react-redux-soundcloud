@@ -6,7 +6,7 @@ The react-redux-soundcloud repository should give you an entry point for a React
 
 There are more folders marked as extension-*/. Each of them pairs with a blogpost and can be applied on base-init/ project.
 
-If you only search for a seed project for your React + Redux + SoundCloud app, simply use the base-init/ folder to begin. If you want to get started in som other domains, please have a look at the extension-*/ folders.
+If you only search for a seed project for your React + Redux + SoundCloud app, simply use the base-init/ folder to begin. If you want to get started in some other domains, please have a look at the extension-*/ folders.
 
 ## Folders
 
@@ -19,7 +19,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 - extension-eslint/ - [Tutorial: ESLint in React + Babel + Webpack](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-eslint)
 - extension-flow/ - [Tutorial: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
 - extension-ducks/ - [Tutorial: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
-- extension-normalizr/ - [Tutorial: Normalizr in Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
+- extension-normalizr/ - [Tutorial: Improve State Management with Normalizr in Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
 - extension-css-modules/ - [Tutorial: Up and Styled with CSS Modules in React](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
 - more upcoming...
 
