@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { observer } from 'mobx-react'
 import { CLIENT_ID } from '../../constants/auth';
 import { auth } from '../../api/auth';
+import userStore from '../../stores/userStore';
+import trackStore from '../../stores/trackStore';
 
+@observer
 class Stream extends Component {
 
   componentDidUpdate() {
@@ -10,9 +14,7 @@ class Stream extends Component {
 
     if (!audioElement) { return; }
 
-    const { activeTrack } = this.props;
-
-    if (activeTrack) {
+    if (trackStore.activeTrack) {
       audioElement.play();
     } else {
       audioElement.pause();
@@ -20,33 +22,31 @@ class Stream extends Component {
   }
 
   render() {
-    const { user, tracks = [], activeTrack, onPlay } = this.props;
-
     return (
       <div>
         <div>
           {
-            user ?
-              <div>{user.username}</div> :
+            userStore.me ?
+              <div>{userStore.me.username}</div> :
               <button onClick={auth} type="button">Login</button>
           }
         </div>
         <br/>
         <div>
         {
-          tracks.map((track, key) => {
+          (trackStore.tracks || []).map((track, key) => {
               return (
                 <div className="track" key={key}>
                   {track.origin.title}
-                  <button type="button" onClick={() => onPlay(track)}>Play</button>
+                  <button type="button" onClick={() => trackStore.activeTrack = track}>Play</button>
                 </div>
               );
           })
         }
         </div>
         {
-          activeTrack ?
-            <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio> :
+          trackStore.activeTrack ?
+            <audio id="audio" ref="audio" src={`${trackStore.activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio> :
             null
         }
       </div>
