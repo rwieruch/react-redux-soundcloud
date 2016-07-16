@@ -1,10 +1,13 @@
-import Stream from '../Stream';
+import Stream from './presenter';
 import { shallow } from 'enzyme';
+import { TrackStore } from '../../stores/trackStore';
+import { UserStore } from '../../stores/userStore';
 
 describe('Stream', () => {
 
   const props = {
-    tracks: [{ origin: { title: 'x' } }, { origin: { title: 'y' } }],
+    trackStore: new TrackStore([{ origin: { title: 'x' } }, { origin: { title: 'y' } }]),
+    userStore: new UserStore(),
   };
 
   it('shows two elements', () => {

@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './components/App';
 import Callback from './components/Callback';
-import Stream from './components/Stream';
+import StreamContainer from './components/Stream';
 
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Stream} />
-      <Route path="/" component={Stream} />
+      <IndexRoute component={StreamContainer} />
+      <Route path="/" component={StreamContainer} />
       <Route path="/callback" component={Callback} />
     </Route>
   </Router>,

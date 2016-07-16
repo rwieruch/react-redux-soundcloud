@@ -5,8 +5,8 @@ class TrackStore {
   @observable tracks;
   @observable activeTrack;
 
-  constructor() {
-    this.tracks = null;
+  constructor(tracks = []) {
+    this.tracks = tracks;
     this.activeTrack = null;
   }
 
@@ -15,3 +15,4 @@ class TrackStore {
 const trackStore = new TrackStore();
 
 export default trackStore;
+export { TrackStore };
