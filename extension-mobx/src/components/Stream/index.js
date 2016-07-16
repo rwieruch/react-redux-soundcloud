@@ -1,23 +1,57 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { CLIENT_ID } from '../../constants/auth';
 import { auth } from '../../api/auth';
-import Stream from './presenter';
 
-function mapStateToProps(state) {
-  const { user } = state.auth;
-  const { tracks, activeTrack } = state.track;
-  return {
-    user,
-    tracks,
-    activeTrack
+class Stream extends Component {
+
+  componentDidUpdate() {
+    const audioElement = ReactDOM.findDOMNode(this.refs.audio);
+
+    if (!audioElement) { return; }
+
+    const { activeTrack } = this.props;
+
+    if (activeTrack) {
+      audioElement.play();
+    } else {
+      audioElement.pause();
+    }
+  }
+
+  render() {
+    const { user, tracks = [], activeTrack, onPlay } = this.props;
+
+    return (
+      <div>
+        <div>
+          {
+            user ?
+              <div>{user.username}</div> :
+              <button onClick={auth} type="button">Login</button>
+          }
+        </div>
+        <br/>
+        <div>
+        {
+          tracks.map((track, key) => {
+              return (
+                <div className="track" key={key}>
+                  {track.origin.title}
+                  <button type="button" onClick={() => onPlay(track)}>Play</button>
+                </div>
+              );
+          })
+        }
+        </div>
+        {
+          activeTrack ?
+            <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio> :
+            null
+        }
+      </div>
+    );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onPlay: () => {},
-    onAuth: auth
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Stream);
+export default Stream;
