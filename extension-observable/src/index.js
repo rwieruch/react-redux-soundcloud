@@ -1,3 +1,4 @@
+import 'rxjs';
 import SC from 'soundcloud';
 import React from 'react';
 import ReactDOM from 'react-dom';
