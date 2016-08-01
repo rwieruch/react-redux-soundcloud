@@ -24,18 +24,21 @@ function setMe(user) {
 
 export const authEpic = (action$) =>
   action$.ofType(actionTypes.AUTH)
-    .map(() => SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI }))
+    .mapTo(SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI }))
     .mergeMap(SC.connect)
     .map(setSession);
 
 export const fetchMeEpic = (action$) =>
   action$.ofType(actionTypes.SESSION_SET)
-    .mergeMap((action) => fetchMe(action.session))
+    .map((action) => action.session)
+    .mergeMap(fetchMe)
     .map(setMe);
 
 export const fetchStreamEpic = (action$) =>
   action$.ofType(actionTypes.SESSION_SET)
-    .mergeMap((action) => fetchStream(action.session))
+    .map((action) => action.session)
+    .mergeMap(fetchStream)
+    .map((data) => data.collection)
     .map(setTracks);
 
 const fetchMe = (session) =>
@@ -45,4 +48,3 @@ const fetchMe = (session) =>
 const fetchStream = (session) =>
   fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
     .then((response) => response.json())
-    .then((data) => data.collection);
