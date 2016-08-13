@@ -47,4 +47,4 @@ const fetchMe = (session) =>
 
 const fetchStream = (session) =>
   fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
-    .then((response) => response.json())
+    .then((response) => response.json());
