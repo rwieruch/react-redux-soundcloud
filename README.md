@@ -2,7 +2,7 @@
 
 I wrote a huge tutorial about setting up your own [SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/). Additonally you can find a real world example of my own SoundCloud Client as [source code](https://github.com/rwieruch/favesound-redux) and [live version](http://www.favesound.de/).
 
-The react-redux-soundcloud repository should give you an entry point for a React + Redux + SoundCloud boilerplate project with multiple possible extensions. The outcome of [the SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/) can be found in the base-init/ folder. 
+The react-redux-soundcloud repository should give you an entry point for a React + Redux + SoundCloud boilerplate project with multiple possible extensions. The outcome of [the SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/) can be found in the base-init/ folder.
 
 There are more folders marked as extension-*/. Each of them pairs with a blogpost and can be applied on base-init/ project.
 
@@ -21,6 +21,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 - extension-ducks/ - [Redux Ducks: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
 - extension-normalizr/ - [Redux Normalizr: Improve your State Management](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
 - extension-css-modules/ - [React CSS Modules: Style your React App](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
+- extension-observable/ - [Redux Observable RxJS: Going Epic with Reactive Programming](http://www.robinwieruch.de/redux-observable-rxjs/)
 - MobX Refactor: [MobX React: Simplified State Management in React](http://www.robinwieruch.de/mobx-react)
 - more upcoming...
 
