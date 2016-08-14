@@ -1,6 +1,7 @@
 import { CLIENT_ID, REDIRECT_URI } from '../constants/auth';
 import * as actionTypes from '../constants/actionTypes';
 import { setTracks } from '../actions/track';
+import { Observable } from 'rxjs';
 
 export function auth() {
   return {
@@ -25,21 +26,24 @@ function setMe(user) {
 export const authEpic = (action$) =>
   action$.ofType(actionTypes.AUTH)
     .mapTo(SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI }))
-    .mergeMap(SC.connect)
-    .map(setSession);
+    .mergeMap(() =>
+      Observable.from(SC.connect())
+        .map(setSession)
+    );
 
 export const fetchMeEpic = (action$) =>
   action$.ofType(actionTypes.SESSION_SET)
-    .map((action) => action.session)
-    .mergeMap(fetchMe)
-    .map(setMe);
+    .mergeMap((action) =>
+      Observable.from(fetchMe(action.session))
+        .map(setMe)
+    );
 
 export const fetchStreamEpic = (action$) =>
   action$.ofType(actionTypes.SESSION_SET)
-    .map((action) => action.session)
-    .mergeMap(fetchStream)
-    .map((data) => data.collection)
-    .map(setTracks);
+    .mergeMap((action) =>
+      Observable.from(fetchStream(action.session))
+        .map((data) => setTracks(data.collection))
+    );
 
 const fetchMe = (session) =>
   fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
