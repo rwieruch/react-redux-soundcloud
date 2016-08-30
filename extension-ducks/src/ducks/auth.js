@@ -1,4 +1,4 @@
-import { CLIENT_ID, REDIRECT_URI } from '../constants/auth';
+import SC from 'soundcloud';
 import { actionCreators as trackActionCreators } from './track';
 
 const ME_SET = 'auth/ME_SET';
@@ -12,20 +12,24 @@ function doSetMe(user) {
 
 function doAuth() {
   return function (dispatch) {
-    SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI });
-
     SC.connect().then((session) => {
-      fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
-        .then((response) => response.json())
-        .then((me) => {
-          dispatch(doSetMe(me));
-          dispatch(doFetchStream(me, session));
-        });
+      dispatch(doFetchMe(session));
+      dispatch(doFetchStream(session));
     });
   };
 };
 
-function doFetchStream(me, session) {
+function doFetchMe(session) {
+    return function (dispatch) {
+      fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
+        .then((response) => response.json())
+        .then((data) => {
+          dispatch(doSetMe(data));
+        });
+    };
+}
+
+function doFetchStream(session) {
   return function (dispatch) {
     fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
       .then((response) => response.json())
