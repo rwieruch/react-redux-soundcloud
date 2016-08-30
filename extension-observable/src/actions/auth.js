@@ -1,3 +1,4 @@
+import SC from 'soundcloud';
 import { CLIENT_ID, REDIRECT_URI } from '../constants/auth';
 import * as actionTypes from '../constants/actionTypes';
 import { setTracks } from '../actions/track';
@@ -26,7 +27,6 @@ function setMe(user) {
 
 export const authEpic = (action$) =>
   action$.ofType(actionTypes.AUTH)
-    .map(() => SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI }))
     .mergeMap(() =>
       Observable.from(SC.connect())
         .map(setSession)
