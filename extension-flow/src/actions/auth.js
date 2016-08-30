@@ -35,7 +35,7 @@ function fetchMe(session) {
 }
 
 function fetchStream(session) {
-  return function (dispatch) {
+  return function (dispatch: Function) {
     fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
       .then((response) => response.json())
       .then((data: StreamData) => {

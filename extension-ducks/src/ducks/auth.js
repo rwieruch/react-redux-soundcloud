@@ -17,7 +17,7 @@ function doAuth() {
       dispatch(doFetchStream(session));
     });
   };
-};
+}
 
 function doFetchMe(session) {
     return function (dispatch) {
