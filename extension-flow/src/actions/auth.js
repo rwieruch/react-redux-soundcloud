@@ -5,7 +5,6 @@ type StreamData = {
 };
 
 import SC from 'soundcloud';
-import { CLIENT_ID, REDIRECT_URI } from '../constants/auth';
 import * as actionTypes from '../constants/actionTypes';
 import { setTracks } from '../actions/track';
 
@@ -17,22 +16,26 @@ function setMe(user) {
 }
 
 export function auth() {
-    return function (dispatch: Function) {
-        SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI });
-
-        SC.connect().then((session) => {
-          fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
-            .then((response) => response.json())
-            .then((me) => {
-              dispatch(setMe(me));
-              dispatch(fetchStream(me, session));
-            });
-        });
-    };
+  return function (dispatch: Function) {
+    SC.connect().then((session) => {
+      dispatch(fetchMe(session));
+      dispatch(fetchStream(session));
+    });
+  };
 };
 
-function fetchStream(me, session) {
-  return function (dispatch: Function) {
+function fetchMe(session) {
+    return function (dispatch: Function) {
+      fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
+        .then((response) => response.json())
+        .then((data) => {
+          dispatch(setMe(data));
+        });
+    };
+}
+
+function fetchStream(session) {
+  return function (dispatch) {
     fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
       .then((response) => response.json())
       .then((data: StreamData) => {
