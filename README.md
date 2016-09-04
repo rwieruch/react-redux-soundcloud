@@ -20,7 +20,7 @@ If you only search for a seed project for your React + Redux + SoundCloud app, s
 - extension-flow/ - [Flow: Type Checking with Flow in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow)
 - extension-ducks/ - [Redux Ducks: Restructure your Redux App with Ducks](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-ducks)
 - extension-normalizr/ - [Redux Normalizr: Improve your State Management](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-normalizr)
-- extension-css-modules/ - [React CSS Modules: Style your React App](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-css-modules)
+- extension-css-modules/
 - extension-observable/ - [Redux Observable RxJS: Going Epic with Reactive Programming](http://www.robinwieruch.de/redux-observable-rxjs/)
 - MobX Refactor: [MobX React: Simplified State Management in React](http://www.robinwieruch.de/mobx-react)
 - more upcoming...
