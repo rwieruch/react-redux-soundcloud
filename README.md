@@ -1,6 +1,6 @@
 # react-redux-soundcloud
 
-I wrote a huge tutorial about setting up your own [SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/). Additonally you can find a real world example of my own SoundCloud Client as [source code](https://github.com/rwieruch/favesound-redux) and [live version](http://www.favesound.de/) (looking for contributors).
+I wrote a huge tutorial about setting up your own [SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/). Additonally you can find a real world example of my own SoundCloud Client as [source code](https://github.com/rwieruch/favesound-redux) and [live version](http://www.favesound.de/).
 
 The current repository should give you an entry point for a React + Redux + SoundCloud boilerplate project with multiple possible extensions. The outcome of [the SoundCloud Client in React + Redux](http://www.robinwieruch.de/the-soundcloud-client-in-react-redux/) can be found in the base-init/ folder.
 
