@@ -1,0 +1,15 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "base-init/package.json",
+        "extension-css-modules/package.json",
+        "extension-ducks/package.json",
+        "extension-eslint/package.json",
+        "extension-flow/package.json",
+        "extension-normalizr/package.json",
+        "extension-observable/package.json"
+      ]
+    }
+  }
+}
